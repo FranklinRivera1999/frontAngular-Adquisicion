@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-md-4 p-4" *ngFor="let evento of eventos">
+        <div class="card card-evento" (click)="selectedEvento(evento._id)">
+            <div class="card-header ">
+                <h5>{{evento.patrocinador}}</h5>
+            </div>
+            <div class="card-body">
+                <p>Lugar: {{evento.lugar}}</p> 
+                <p>Fecha del Evento: {{evento.fecha_evento | date:'dd-MM-yyyy'}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
