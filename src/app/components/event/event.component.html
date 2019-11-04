@@ -1,10 +1,10 @@
 <div class="row">
-    <div class="col-md-3 p-4" *ngFor="let evento of eventos">
+    <div class="col-md-4 p-4" *ngFor="let evento of eventos">
         <div class="card card-evento" (click)="selectedEvento(evento._id)">
-            <img src="https://is4-ssl.mzstatic.com/image/thumb/Purple118/v4/da/57/1e/da571e7e-ebe3-0c8f-0a94-3b11e3d1ae1a/AppIcon-0-1x_U007emarketing-0-0-85-220-0-5.png/400x400bb.jpg" alt="IMG" class="card-img-top w-60" >
+            <img src="{{evento.url_imagen}}" alt="IMG" class="card-img-top w-80" >
             <div class="card-body">
-                <h5 class="card-Title">Lugar: {{evento.lugar}}</h5> 
-                <p>Fecha del Evento: {{evento.fecha_evento | date:'dd-MM-yyyy'}}</p>
+                <h5 class="card-title"> {{evento.nombre}}</h5> 
+                <p class="card-text"> {{evento.descripcion}}</p>
             </div>
         </div>
     </div>

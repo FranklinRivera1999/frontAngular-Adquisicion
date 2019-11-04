@@ -1,1 +1,17 @@
-<h1>DETALLE FOTO IAMA</h1>
+<div class="row" *ngIf="!evento; else main_content">
+    <h1>Loading...</h1>
+</div>
+<ng-template #main_content>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-3">
+                <img src="{{evento.url_imagen}}" alt="IMG" class="card-img-top w-200" >
+            </div>
+        </div>
+        <h3>{{evento.nombre}}</h3>
+        <p>{{evento.descripcion}}</p>
+        <p>{{evento.patrocinador}}</p>
+        <p>Fecha del Evento : {{evento.fecha_evento}}</p>
+        <p>Lugar : {{evento.lugar}}</p>
+    </div>
+</ng-template>
