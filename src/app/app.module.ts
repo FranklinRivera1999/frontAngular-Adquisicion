@@ -9,6 +9,8 @@ import { EventComponent } from './components/event/event.component';
 import { TicketComponent } from './components/ticket/ticket.component';
 import { EventodetComponent } from './components/eventodet/eventodet.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
+import { BodyComponent } from './components/body/body.component';
+import { BarraComponent } from './components/barra/barra.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { PerfilComponent } from './components/perfil/perfil.component';
     EventComponent,
     TicketComponent,
     EventodetComponent,
-    PerfilComponent
+    PerfilComponent,
+    BodyComponent,
+    BarraComponent
   ],
   imports: [
     BrowserModule,

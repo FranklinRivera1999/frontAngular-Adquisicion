@@ -5,6 +5,7 @@ import { EventComponent } from './components/event/event.component';
 import { TicketComponent } from './components/ticket/ticket.component';
 import { EventodetComponent } from './components/eventodet/eventodet.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
+import {BodyComponent} from './components/body/body.component'
 
 const routes: Routes = [
   {
@@ -21,8 +22,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/eventos',
-    pathMatch: 'full'
+    component: BodyComponent
   },
   {
     path:'perfil',
