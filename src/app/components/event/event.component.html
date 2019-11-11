@@ -46,12 +46,11 @@
 <div class="row py-4">
     <div class="col-md-4 p-4" *ngFor="let evento of eventos">
         <div class="card card-evento" (click)="selectedEvento(evento._id)">
-            <img src="{{evento.url_imagen}}" alt="IMG" class="card-img-top w-80" >
+            <img [src]="evento.url" alt="IMG" class="card-img-top w-80">
             <div class="card-body">
-                <h5 class="card-title"> {{evento.nombre}}</h5>
-                <p class="card-text"> {{evento.descripcion}}</p>
+                <h5 class="card-title"> {{evento.titulo}}</h5>
+
             </div>
         </div>
     </div>
 </div>
-

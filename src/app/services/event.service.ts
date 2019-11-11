@@ -9,8 +9,8 @@ import {Usuario} from '../interfaces/usuario';
 })
 export class EventService {
 
-  URI='http://localhost:5000/api/evento';
-  URI2='http://localhost:5000/';
+  URI = 'http://localhost:5000/api/evento';
+  URI2 = 'http://localhost:5000/';
   constructor(private http: HttpClient) { }
 
   getEventos(){
@@ -25,6 +25,6 @@ export class EventService {
     const fd = new FormData();
     fd.append('username', username);
     fd.append('password', password);
-    return this.http.post(this.URI2+'login', fd);
+    return this.http.post(this.URI2 + 'login', fd);
   }
 }

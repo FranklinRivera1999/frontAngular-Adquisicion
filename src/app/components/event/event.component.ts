@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 export class EventComponent implements OnInit {
 
 
-  eventos= [];
+  eventos = [];
 
   constructor(private eventoService: EventService, private router: Router) { }
 
@@ -18,7 +18,8 @@ export class EventComponent implements OnInit {
     this.eventoService.getEventos()
       .subscribe(
         res=> {
-          this.eventos = res
+          console.log(res);
+          this.eventos = res;
         },
         err =>  console.log(err)
       )

@@ -3,15 +3,32 @@
 </div>
 <ng-template #main_content>
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-3">
-                <img src="{{evento.url_imagen}}" alt="IMG" class="card-img-top w-200" >
+        <div class="row d-flex justify-content-center m-lg-3">
+            <h2 class="bg-transparent text-white">{{evento.titulo}}</h2>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6 ">
+                <img [src]="evento.url" alt="IMG" class="card-img-top w-400">
             </div>
         </div>
-        <h3>{{evento.nombre}}</h3>
-        <p>{{evento.descripcion}}</p>
-        <p>{{evento.patrocinador}}</p>
-        <p>Fecha del Evento : {{evento.fecha_evento}}</p>
-        <p>Lugar : {{evento.lugar}}</p>
+        <div class="row ">
+            <div class="col-md-5 m-lg-3 ">
+                <p class="bg-transparent text-white">{{evento.descripcion}}</p>
+                <h4 class="text-white">Lugar : {{evento.lugar}}</h4>
+            </div>
+            <div class="col-md-5 m-lg-3">
+                <h3 class="text-white">Organizado por: {{evento.patrocinador}}</h3>
+                <h4 class="text-white">Fecha del Evento : {{evento.fecha_evento}}</h4>
+
+                <div class="row">
+                    <div class="col-md-8 m-lg-4 d-flex justify-content-center">
+                        <i class="fa fa-cart-plus m-lg-4" style="color:rgb(5, 5, 5); font-size: 48px;"></i>
+                        <button type="button" class="btn btn-outline-secondary btn-lg btn-block">Comprar entrada</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
     </div>
 </ng-template>

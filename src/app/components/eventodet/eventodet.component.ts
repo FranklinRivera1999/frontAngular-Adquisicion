@@ -24,13 +24,13 @@ export class EventodetComponent implements OnInit {
       this.eventoService.getEvento(this.id)
       .subscribe(
         res => {
-          this.evento=res;
+          this.evento = res;
           console.log('INICIO COMPONENTE DETALLE EVENTO');
           console.log(this.evento)
         },
         err => console.log(err)
       )
-    })
+    });
   }
 
 }
