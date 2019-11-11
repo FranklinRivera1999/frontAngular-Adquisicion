@@ -22,9 +22,14 @@ export class EventService {
   }
 
   createPhoto(username: string, password: string) {
-    const fd = new FormData();
-    fd.append('username', username);
-    fd.append('password', password);
-    return this.http.post(this.URI2 + 'login', fd);
+    //const fd = new FormData();
+    //fd.append('username', username);
+    //fd.append('password', password);
+    const jason_form = {
+      'username': username,
+      'password': password
+    }
+    
+    return this.http.post(this.URI2+'login', jason_form);
   }
 }
