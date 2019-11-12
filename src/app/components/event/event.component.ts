@@ -26,8 +26,7 @@ export class EventComponent implements OnInit {
   }
 
   selectedEvento(id: string){
-    this.router.navigate(['/evento', id]);
-    
+    this.router.navigate(['/evento', id]); 
   }
 
 }

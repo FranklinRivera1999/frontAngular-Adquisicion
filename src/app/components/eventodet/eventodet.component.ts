@@ -8,6 +8,7 @@ import {Evento} from '../../interfaces/evento' ;
   templateUrl: './eventodet.component.html',
   styleUrls: ['./eventodet.component.css']
 })
+
 export class EventodetComponent implements OnInit {
 
   evento:Evento;
@@ -33,4 +34,35 @@ export class EventodetComponent implements OnInit {
     });
   }
 
+ pay(amount) {    
+    var eventoServicio = this.eventoService;
+    
+    var handler = (<any>window).StripeCheckout.configure({
+      key: 'pk_test_O4VSUNTYJYgm3Ppgz50KHaBB',
+      locale: 'auto',
+      token: function (token: any) {
+        // You can access the token ID with `token.id`.
+        // Get the token ID to your server-side code for use.
+        console.log(token);
+      
+
+            
+        eventoServicio.pagar(token).subscribe(
+            res=> {
+                console.log(res);
+              },
+              err =>  console.log(err)
+        );        
+      }
+    });
+ 
+    handler.open({
+      name: 'Compra entrada',
+      description: 'Ingrese su tarjeta para realizar la compra',
+      amount: amount * 100
+    });
+    
+
+
+  }
 }

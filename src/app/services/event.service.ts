@@ -29,7 +29,13 @@ export class EventService {
       'username': username,
       'password': password
     }
-    
+
     return this.http.post(this.URI2+'login', jason_form);
   }
+
+  pagar(token){
+    console.log("Llego aqui");
+    return this.http.post(this.URI2+'payme',token);
+  }
+
 }

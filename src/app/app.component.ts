@@ -1,10 +1,46 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'frontend';
+
+
+  constructor() { }
+  handler:any = null;
+  ngOnInit() {
+ 
+    this.loadStripe();
+  }
+ 
+  
+ 
+  loadStripe() {
+     
+    if(!window.document.getElementById('stripe-script')) {
+      var s = window.document.createElement("script");
+      s.id = "stripe-script";
+      s.type = "text/javascript";
+      s.src = "https://checkout.stripe.com/checkout.js";
+      s.onload = () => {
+        this.handler = (<any>window).StripeCheckout.configure({
+          key: 'pk_test_O4VSUNTYJYgm3Ppgz50KHaBB',
+          locale: 'auto',
+          token: function (token: any) {
+            // You can access the token ID with `token.id`.
+            // Get the token ID to your server-side code for use.
+            console.log(token)
+            alert('Payment Success!!');
+          }
+        });
+      }
+       
+      window.document.body.appendChild(s);
+    }
+  }
+
+
 }
