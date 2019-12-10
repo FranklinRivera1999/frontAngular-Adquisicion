@@ -11,6 +11,7 @@ export class EventComponent implements OnInit {
 
 
   eventos = [];
+  eventosRecomendados = [];
 
   constructor(private eventoService: EventService, private router: Router) { }
 
@@ -18,11 +19,23 @@ export class EventComponent implements OnInit {
     this.eventoService.getEventos()
       .subscribe(
         res=> {
+          console.log("Eventos normales");
           console.log(res);
           this.eventos = res;
         },
         err =>  console.log(err)
       )
+
+    this.eventoService.getEventosR()
+      .subscribe(
+        res=> {
+          console.log("Eventos recomendados");
+          console.log(res);
+          this.eventosRecomendados = res;
+        },
+        err =>  console.log(err)
+      )
+    
   }
 
   selectedEvento(id: string){

@@ -21,6 +21,10 @@ export class EventService {
     return this.http.get<Evento>(this.URI+ '/'+id);
   }
 
+  getEventosR(){
+    return this.http.get<Evento[]>(this.URI + '/recomendados');
+  }
+
   createPhoto(username: string, password: string) {
     //const fd = new FormData();
     //fd.append('username', username);
@@ -30,7 +34,7 @@ export class EventService {
       'password': password
     }
 
-    return this.http.post(this.URI2+'login', jason_form);
+    return this.http.post(this.URI2+'login',jason_form , { withCredentials: true });
   }
 
   pagar(token){

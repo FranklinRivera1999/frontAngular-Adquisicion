@@ -12,6 +12,11 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { BodyComponent } from './components/body/body.component';
 import { BarraComponent } from './components/barra/barra.component';
 
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ 
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +29,9 @@ import { BarraComponent } from './components/barra/barra.component';
     BarraComponent
   ],
   imports: [
+    CommonModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
